@@ -1,0 +1,130 @@
+root@LAPTOP-99TDMC7N:/mnt/c/Users/peter/Desktop/Undergrad/CSCE_420/PA1# ./blocksworld probB19.bwp -H H2 
+iter=1, depth=0, pathcost=0, heuristic=27, score=27, children=16, Qsize=0
+iter=1001, depth=8, pathcost=8, heuristic=18, score=26, children=16, Qsize=6424
+move = 0, pathcost = 0, heuristic=27, f(n)=g(n)+h(n)=0
+
+DF
+BCEGI
+A
+HJ
+>>>>>>>>>>
+move = 1, pathcost = 1, heuristic=24, f(n)=g(n)+h(n)=25
+I
+DF
+BCEG
+A
+HJ
+>>>>>>>>>>
+move = 2, pathcost = 2, heuristic=22, f(n)=g(n)+h(n)=24
+I
+DF
+BCE
+AG
+HJ
+>>>>>>>>>>
+move = 3, pathcost = 3, heuristic=24, f(n)=g(n)+h(n)=27
+I
+DF
+BCE
+AGJ
+H
+>>>>>>>>>>
+move = 4, pathcost = 4, heuristic=20, f(n)=g(n)+h(n)=24
+I
+DFH
+BCE
+AGJ
+
+>>>>>>>>>>
+move = 5, pathcost = 5, heuristic=19, f(n)=g(n)+h(n)=24
+IE
+DFH
+BC
+AGJ
+
+>>>>>>>>>>
+move = 6, pathcost = 6, heuristic=19, f(n)=g(n)+h(n)=25
+IEJ
+DFH
+BC
+AG
+
+>>>>>>>>>>
+move = 7, pathcost = 7, heuristic=17, f(n)=g(n)+h(n)=24
+IEJ
+DFH
+BC
+A
+G
+>>>>>>>>>>
+move = 8, pathcost = 8, heuristic=14, f(n)=g(n)+h(n)=22
+IE
+DFH
+BC
+A
+GJ
+>>>>>>>>>>
+move = 9, pathcost = 9, heuristic=11, f(n)=g(n)+h(n)=20
+IE
+DF
+BC
+A
+GJH
+>>>>>>>>>>
+move = 10, pathcost = 10, heuristic=9, f(n)=g(n)+h(n)=19
+IE
+D
+BC
+A
+GJHF
+>>>>>>>>>>
+move = 11, pathcost = 11, heuristic=8, f(n)=g(n)+h(n)=19
+IE
+D
+BC
+
+GJHFA
+>>>>>>>>>>
+move = 12, pathcost = 12, heuristic=6, f(n)=g(n)+h(n)=18
+IE
+D
+B
+
+GJHFAC
+>>>>>>>>>>
+move = 13, pathcost = 13, heuristic=5, f(n)=g(n)+h(n)=18
+I
+D
+B
+E
+GJHFAC
+>>>>>>>>>>
+move = 14, pathcost = 14, heuristic=4, f(n)=g(n)+h(n)=18
+I
+
+B
+E
+GJHFACD
+>>>>>>>>>>
+move = 15, pathcost = 15, heuristic=2, f(n)=g(n)+h(n)=17
+
+
+B
+E
+GJHFACDI
+>>>>>>>>>>
+move = 16, pathcost = 16, heuristic=1, f(n)=g(n)+h(n)=17
+B
+
+
+E
+GJHFACDI
+>>>>>>>>>>
+move = 17, pathcost = 17, heuristic=0, f(n)=g(n)+h(n)=17
+BE
+
+
+
+GJHFACDI
+>>>>>>>>>>
+statistics: ./probs/probB19.bwp method A* planlen 17 iter 1943 maxq 12189

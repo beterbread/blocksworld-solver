@@ -1,0 +1,68 @@
+root@LAPTOP-99TDMC7N:/mnt/c/Users/peter/Desktop/Undergrad/CSCE_420/PA1# ./blocksworld probA11.bwp -H H2 
+iter=1, depth=0, pathcost=0, heuristic=20, score=20, children=2, Qsize=0
+move = 0, pathcost = 0, heuristic=20, f(n)=g(n)+h(n)=0
+ABCDE
+
+
+>>>>>>>>>>
+move = 1, pathcost = 1, heuristic=16, f(n)=g(n)+h(n)=17
+ABCD
+
+E
+>>>>>>>>>>
+move = 2, pathcost = 2, heuristic=13, f(n)=g(n)+h(n)=15
+ABC
+D
+E
+>>>>>>>>>>
+move = 3, pathcost = 3, heuristic=11, f(n)=g(n)+h(n)=14
+AB
+DC
+E
+>>>>>>>>>>
+move = 4, pathcost = 4, heuristic=12, f(n)=g(n)+h(n)=16
+AB
+DCE
+
+>>>>>>>>>>
+move = 5, pathcost = 5, heuristic=9, f(n)=g(n)+h(n)=14
+A
+DCE
+B
+>>>>>>>>>>
+move = 6, pathcost = 6, heuristic=9, f(n)=g(n)+h(n)=15
+
+DCE
+BA
+>>>>>>>>>>
+move = 7, pathcost = 7, heuristic=6, f(n)=g(n)+h(n)=13
+E
+DC
+BA
+>>>>>>>>>>
+move = 8, pathcost = 8, heuristic=5, f(n)=g(n)+h(n)=13
+EC
+D
+BA
+>>>>>>>>>>
+move = 9, pathcost = 9, heuristic=5, f(n)=g(n)+h(n)=14
+ECD
+
+BA
+>>>>>>>>>>
+move = 10, pathcost = 10, heuristic=3, f(n)=g(n)+h(n)=13
+ECD
+A
+B
+>>>>>>>>>>
+move = 11, pathcost = 11, heuristic=1, f(n)=g(n)+h(n)=12
+EC
+A
+BD
+>>>>>>>>>>
+move = 12, pathcost = 12, heuristic=0, f(n)=g(n)+h(n)=12
+E
+AC
+BD
+>>>>>>>>>>
+statistics: ./probs/probA11.bwp method A* planlen 12 iter 22 maxq 47

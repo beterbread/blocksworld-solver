@@ -1,0 +1,157 @@
+root@LAPTOP-99TDMC7N:/mnt/c/Users/peter/Desktop/Undergrad/CSCE_420/PA1# ./blocksworld probB20.bwp -H H2 
+iter=1, depth=0, pathcost=0, heuristic=36, score=36, children=16, Qsize=0
+move = 0, pathcost = 0, heuristic=36, f(n)=g(n)+h(n)=0
+BCJ
+FH
+ADEI
+G
+
+>>>>>>>>>>
+move = 1, pathcost = 1, heuristic=31, f(n)=g(n)+h(n)=32
+BCJ
+FH
+ADE
+GI
+
+>>>>>>>>>>
+move = 2, pathcost = 2, heuristic=28, f(n)=g(n)+h(n)=30
+BCJ
+FH
+AD
+GIE
+
+>>>>>>>>>>
+move = 3, pathcost = 3, heuristic=24, f(n)=g(n)+h(n)=27
+BCJ
+FH
+A
+GIE
+D
+>>>>>>>>>>
+move = 4, pathcost = 4, heuristic=22, f(n)=g(n)+h(n)=26
+BC
+FH
+A
+GIE
+DJ
+>>>>>>>>>>
+move = 5, pathcost = 5, heuristic=21, f(n)=g(n)+h(n)=26
+BC
+F
+A
+GIE
+DJH
+>>>>>>>>>>
+move = 6, pathcost = 6, heuristic=20, f(n)=g(n)+h(n)=26
+BC
+FE
+A
+GI
+DJH
+>>>>>>>>>>
+move = 7, pathcost = 7, heuristic=19, f(n)=g(n)+h(n)=26
+B
+FEC
+A
+GI
+DJH
+>>>>>>>>>>
+move = 8, pathcost = 8, heuristic=19, f(n)=g(n)+h(n)=27
+
+FECB
+A
+GI
+DJH
+>>>>>>>>>>
+move = 9, pathcost = 9, heuristic=17, f(n)=g(n)+h(n)=26
+A
+FECB
+
+GI
+DJH
+>>>>>>>>>>
+move = 10, pathcost = 10, heuristic=15, f(n)=g(n)+h(n)=25
+AI
+FECB
+
+G
+DJH
+>>>>>>>>>>
+move = 11, pathcost = 11, heuristic=14, f(n)=g(n)+h(n)=25
+AI
+FECB
+
+GH
+DJ
+>>>>>>>>>>
+move = 12, pathcost = 12, heuristic=12, f(n)=g(n)+h(n)=24
+AIJ
+FECB
+
+GH
+D
+>>>>>>>>>>
+move = 13, pathcost = 13, heuristic=10, f(n)=g(n)+h(n)=23
+AIJ
+FEC
+
+GH
+DB
+>>>>>>>>>>
+move = 14, pathcost = 14, heuristic=8, f(n)=g(n)+h(n)=22
+AIJC
+FE
+
+GH
+DB
+>>>>>>>>>>
+move = 15, pathcost = 15, heuristic=7, f(n)=g(n)+h(n)=22
+AIJC
+F
+
+GH
+DBE
+>>>>>>>>>>
+move = 16, pathcost = 16, heuristic=5, f(n)=g(n)+h(n)=21
+AIJC
+
+F
+GH
+DBE
+>>>>>>>>>>
+move = 17, pathcost = 17, heuristic=4, f(n)=g(n)+h(n)=21
+AIJ
+C
+F
+GH
+DBE
+>>>>>>>>>>
+move = 18, pathcost = 18, heuristic=3, f(n)=g(n)+h(n)=21
+AIJH
+C
+F
+G
+DBE
+>>>>>>>>>>
+move = 19, pathcost = 19, heuristic=2, f(n)=g(n)+h(n)=21
+AIJH
+C
+FG
+
+DBE
+>>>>>>>>>>
+move = 20, pathcost = 20, heuristic=1, f(n)=g(n)+h(n)=21
+AIJ
+C
+FGH
+
+DBE
+>>>>>>>>>>
+move = 21, pathcost = 21, heuristic=0, f(n)=g(n)+h(n)=21
+AIJ
+CE
+FGH
+
+DB
+>>>>>>>>>>
+statistics: ./probs/probB20.bwp method A* planlen 21 iter 60 maxq 758

@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import { exec } from 'child_process';
-import { writeFileSync, unlinkSync } from 'fs';
+import { writeFileSync, unlinkSync, mkdirSync } from 'fs';
 import { promisify } from 'util';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -9,13 +9,15 @@ import { fileURLToPath } from 'url';
 const execAsync = promisify(exec);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-// server/server.js -> ../Program/
 const PROGRAM_DIR = path.resolve(__dirname, '..', 'Program');
 const BINARY_PATH = path.join(PROGRAM_DIR, 'blocksworld');
-const PROBS_DIR   = path.join(PROGRAM_DIR, 'probs');
+
+const TMP_CWD   = '/tmp';
+const TMP_PROBS = '/tmp/probs';
+mkdirSync(TMP_PROBS, { recursive: true });
 
 const app = express();
-app.use(cors({ origin: ["http://localhost:5173"] }));
+app.use(cors({ origin: ["http://localhost:5173", "https://blocksworld-solver.vercel.app"] }));
 app.use(express.json());
 
 app.get("/api", (req, res) => {
@@ -53,7 +55,7 @@ app.post("/api/solve", async (req, res) => {
     ].join("\n");
 
     const tmpFilename = `tmp_${Date.now()}_${Math.random().toString(36).slice(2)}.bwp`;
-    const tmpPath = path.join(PROBS_DIR, tmpFilename);
+    const tmpPath = path.join(TMP_PROBS, tmpFilename);
 
     try {
         writeFileSync(tmpPath, bwpContent);
@@ -61,11 +63,10 @@ app.post("/api/solve", async (req, res) => {
         return res.status(500).json({ error: "Could not write problem file: " + err.message });
     }
 
-    // Binary reads from ./probs/<filename>, so cwd must be PROGRAM_DIR
     const cmd = `${BINARY_PATH} ${tmpFilename} -H H2`;
     let stdout = "";
     try {
-        const result = await execAsync(cmd, { cwd: PROGRAM_DIR, timeout: 30000 });
+        const result = await execAsync(cmd, { cwd: TMP_CWD, timeout: 30000 });
         stdout = result.stdout;
     } catch (err) {
         try { unlinkSync(tmpPath); } catch (_) {}
@@ -73,10 +74,6 @@ app.post("/api/solve", async (req, res) => {
     }
     try { unlinkSync(tmpPath); } catch (_) {}
 
-    // Parse stdout - each step:
-    //   move = N, pathcost = N, heuristic=N, f(n)=g(n)+h(n)=N
-    //   <numStacks lines, possibly empty>
-    //   >>>>>>>>>>
     const outLines = stdout.split("\n");
     const steps = [];
     let i = 0;
@@ -92,7 +89,7 @@ app.post("/api/solve", async (req, res) => {
                 stacks.push(outLines[i]);
                 i++;
             }
-            i++; // skip >>>>>>>>>>
+            i++;
             steps.push({
                 move: +m[1], pathcost: +m[2], heuristic: +m[3], fn: +m[4], stacks,
             });
@@ -108,3 +105,5 @@ app.post("/api/solve", async (req, res) => {
 });
 
 app.listen(5000, () => console.log("Server running"));
+
+export default app;

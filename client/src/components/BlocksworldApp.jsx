@@ -25,7 +25,7 @@ export default function BlocksworldApp() {
   async function solve() {
     setLoading(true); setError(null); setResult(null);
     try {
-      const resp = await fetch("http://localhost:5000/api/solve", {
+      const resp = await fetch(`${import.meta.env.VITE_API_URL}/api/solve`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

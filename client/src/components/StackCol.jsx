@@ -24,7 +24,11 @@ export default function StackCol({ blocks, index, editable, onPickUp, onDrop, dr
             letter={letter}
             draggable={editable}
             isBeingDragged={dragIdx === i}
-            onDragStart={editable ? () => onPickUp(letter, index, i) : undefined}
+            onDragStart={editable ? (e) => {
+              const el = e.currentTarget;
+              e.dataTransfer.setDragImage(el, el.offsetWidth / 2, el.offsetHeight / 2);
+              onPickUp(letter, index, i);
+            } : undefined}
           />
         ))}
 

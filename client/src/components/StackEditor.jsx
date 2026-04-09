@@ -66,7 +66,11 @@ export default function StackEditor({ label, stacks, setStacks, allBlocks }) {
               key={l}
               letter={l}
               draggable
-              onDragStart={() => handlePickUpFromPalette(l)}
+              onDragStart={(e) => {
+                const el = e.currentTarget;
+                e.dataTransfer.setDragImage(el, el.offsetWidth / 2, el.offsetHeight / 2);
+                handlePickUpFromPalette(l);
+              }}
             />
           ))
         }

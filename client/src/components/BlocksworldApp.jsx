@@ -52,7 +52,20 @@ export default function BlocksworldApp() {
 
         <div className="bg-zinc-800/50 rounded-xl border border-zinc-700 px-6 py-5 space-y-3">
           <p className="text-xs font-semibold uppercase tracking-widest text-zinc-400 mb-4">Configuration</p>
-          <SliderControl label="Blocks" min={1} max={26} value={numBlocks} onChange={setNumBlocks} />
+          <SliderControl
+            label="Blocks"
+            min={1}
+            max={26}
+            value={numBlocks}
+            onChange={n => {
+              const newBlocks = new Set(ALPHABET.slice(0, n));
+              setInitialStacks(prev => prev.map(s => s.filter(b => newBlocks.has(b))));
+              setGoalStacks(prev => prev.map(s => s.filter(b => newBlocks.has(b))));
+              setNumBlocks(n);
+              setResult(null);
+              setError(null);
+            }}
+          />
           <SliderControl label="Stacks (columns)" min={1} max={10} value={numStacks} onChange={n => {
             setNumStacks(n);
             const si = emptyStacks(n); si[0] = initialStacks.flat(); setInitialStacks(si);

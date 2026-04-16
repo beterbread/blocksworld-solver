@@ -32,8 +32,8 @@ export default function SolutionViewer({ steps, numStacks }) {
   return (
     <div className="space-y-4">
       <div className="flex gap-2 flex-wrap">
-        <StatCard label="Plan length" value={totalMoves} />
-        <StatCard label="Step" value={`${step + 1} / ${steps.length}`} />
+        <StatCard label="Solution length" value={totalMoves} />
+        <StatCard label="Step" value={`${step} / ${steps.length-1}`} />
         <StatCard label="h(n)" value={cur.heuristic} />
         <StatCard label="f(n)" value={cur.fn} />
       </div>
